@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       <div className="container text-center">
         <h1 className="titulo bg-light">Aplicación del Clima</h1>
-        <Formulario setDatos={setDatos}/>
+        <Formulario datos={datos} setDatos={setDatos}/>
         <Resultado />
         <Footer />
       </div>
