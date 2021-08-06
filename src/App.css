@@ -49,3 +49,10 @@
 			"footer";
 	}
 }
+
+.temperaturas {
+	display: grid;
+	grid-template-columns: auto auto;
+	text-align: left;
+	margin-left: 20px;
+}

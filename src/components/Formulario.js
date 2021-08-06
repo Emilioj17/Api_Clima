@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import "bootstrap/dist/css/bootstrap.css";
 
 const Formulario = ({ datos, setDatos, setRetornoApi }) => {
@@ -13,8 +13,40 @@ const Formulario = ({ datos, setDatos, setRetornoApi }) => {
         const url = `http://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&APPID=${key}&units=metric&lang={es}`
         const response = await fetch(url);
         const data = await response.json();
-        setRetornoApi(data);
+        setRetornoApi(data.main);
     };
+
+    const Ciudad = () => {
+        if (pais === "chl") {
+            return (
+                <Fragment>
+                    <option value="arica">Arica</option>
+                    <option value="santiago">Santiago</option>
+                    <option value="linares">Linares</option>
+                </Fragment>
+            )
+        } else if (pais === "arg") {
+            return (
+                <Fragment>
+                    <option value="mendoza">Mendoza</option>
+                    <option value="santiago">Santiago</option>
+                    <option value="linares">Linares</option>
+                </Fragment>
+            )
+        } else if (pais === "bra") {
+            return (
+                <Fragment>
+                    <option value="brasilia">Brasilia</option>
+                    <option value="santiago">Santiago</option>
+                    <option value="linares">Linares</option>
+                </Fragment>
+            )
+        } else {
+            return (
+                null
+            )
+        }
+    }
 
 
     return (
@@ -32,9 +64,7 @@ const Formulario = ({ datos, setDatos, setRetornoApi }) => {
                 <label className="input-group-text" htmlFor="inputGroupSelect01">Ciudad</label>
                 <select className="form-select" id="inputGroupSelect01" name="ciudad" onChange={(e)=>Handler(e)}>
                 <option selected>Escoge...</option>
-                <option value="mendoza">Mendoza</option>
-                <option value="santiago">Santiago</option>
-                <option value="brasilia">Brasilia</option>
+                    <Ciudad/>
                 </select>
             </div>
             <div className="d-grid gap-2">
