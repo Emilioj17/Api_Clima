@@ -29,21 +29,21 @@ const Formulario = ({ datos, setDatos, setRetornoApi }) => {
             return (
                 <Fragment>
                     <option value="mendoza">Mendoza</option>
-                    <option value="santiago">Santiago</option>
-                    <option value="linares">Linares</option>
+                    <option value="rosario">Rosario</option>
+                    <option value="salta">Salta</option>
                 </Fragment>
             )
         } else if (pais === "bra") {
             return (
                 <Fragment>
                     <option value="brasilia">Brasilia</option>
-                    <option value="santiago">Santiago</option>
-                    <option value="linares">Linares</option>
+                    <option value="natal">Natal</option>
+                    <option value="curitiba">Curitiba</option>
                 </Fragment>
             )
         } else {
             return (
-                null
+                <option selected>Escoge Pais Primero...</option>
             )
         }
     }
@@ -63,7 +63,6 @@ const Formulario = ({ datos, setDatos, setRetornoApi }) => {
             <div className="input-group mb-3">
                 <label className="input-group-text" htmlFor="inputGroupSelect01">Ciudad</label>
                 <select className="form-select" id="inputGroupSelect01" name="ciudad" onChange={(e)=>Handler(e)}>
-                <option selected>Escoge...</option>
                     <Ciudad/>
                 </select>
             </div>
