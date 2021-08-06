@@ -22,7 +22,7 @@ const Resultado = ({ retornoApi, datos }) => {
     } else {
         return (
             <div className="resultado bg-light m-2">
-                Elige una Opción.
+                Elige una Opción para País y Ciudad.
             </div>
         );
     }
