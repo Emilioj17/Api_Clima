@@ -9,14 +9,15 @@ function App() {
   const [datos, setDatos] = useState({
     ciudad: "",
     pais: ""
-  })
+  });
+  const [retornoApi, setRetornoApi] = useState();
 
   return (
     <div className="App">
       <div className="container text-center">
         <h1 className="titulo bg-light">Aplicación del Clima</h1>
-        <Formulario datos={datos} setDatos={setDatos}/>
-        <Resultado />
+        <Formulario datos={datos} setDatos={setDatos} setRetornoApi={setRetornoApi}/>
+        <Resultado retornoApi={retornoApi}/>
         <Footer />
       </div>
     </div>
