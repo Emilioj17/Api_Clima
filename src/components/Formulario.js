@@ -16,36 +16,19 @@ const Formulario = ({ datos, setDatos, setRetornoApi }) => {
         setRetornoApi(data.main);
     };
 
+    let Ciudad2;
     const Ciudad = () => {
         if (pais === "chl") {
-            return (
-                <Fragment>
-                    <option value="arica">Arica</option>
-                    <option value="santiago">Santiago</option>
-                    <option value="linares">Linares</option>
-                </Fragment>
-            )
+            let Ciudad2 = ["arica", "santiago", "linares"]
         } else if (pais === "arg") {
-            return (
-                <Fragment>
-                    <option value="mendoza">Mendoza</option>
-                    <option value="rosario">Rosario</option>
-                    <option value="salta">Salta</option>
-                </Fragment>
-            )
+            let Ciudad2 = ["mendoza", "rosario", "salta"]
         } else if (pais === "bra") {
-            return (
-                <Fragment>
-                    <option value="brasilia">Brasilia</option>
-                    <option value="natal">Natal</option>
-                    <option value="curitiba">Curitiba</option>
-                </Fragment>
-            )
+            let Ciudad2 = ["brasilia", "natal", "curitiba"]
         } else {
-            return (
-                <option selected>Escoge Pais Primero...</option>
-            )
+            let Ciudad2;
         }
+        console.log(Ciudad2);
+        return (Ciudad2);
     }
 
 
@@ -62,7 +45,11 @@ const Formulario = ({ datos, setDatos, setRetornoApi }) => {
             </div>
             <div className="input-group mb-3">
                 <label className="input-group-text" htmlFor="inputGroupSelect01">Ciudad</label>
-                <select className="form-select" id="inputGroupSelect01" name="ciudad" onChange={(e)=>Handler(e)}>
+                <select className="form-select" id="inputGroupSelect01" name="ciudad" onChange={(e) => Handler(e)}>
+                    <option selected>Escoge...</option>
+                    <option value={Ciudad[0]}>{Ciudad[0]}</option>
+                    <option value={Ciudad[1]}>{Ciudad[1]}</option>
+                    <option value={Ciudad[2]}>{Ciudad[2]}</option>
                     <Ciudad/>
                 </select>
             </div>

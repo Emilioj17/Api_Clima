@@ -9,7 +9,7 @@ const Resultado = ({ retornoApi, datos }) => {
         return (
             <div className="resultado bg-light m-2">
                 <p>La temperatura para la ciudad de {ciudad}:</p>
-                <h2>{temp} ℃</h2>
+                <h1>{temp} ℃</h1>
                 <div className="temperaturas">
                     <p>Temperatura Mínima: </p><span>{temp_min} ℃</span>
                     <p>Temperatura Máxima: </p><span>{temp_max} ℃</span>
