@@ -9,7 +9,7 @@ const Formulario = ({ datos, setDatos, setRetornoApi }) => {
     };
 
     const HandlerClick = async (event) => {
-        const key = "4355e1f49fa588f2645b8c5b8144fd27";
+        const key = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXx";
         const url = `http://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&APPID=${key}&units=metric&lang={es}`
         const response = await fetch(url);
         const data = await response.json();
